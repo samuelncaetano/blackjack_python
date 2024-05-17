@@ -1,46 +1,47 @@
 repos:
--   repo: https://github.com/commitizen-tools/commitizen
+  - repo: https://github.com/commitizen-tools/commitizen
     rev: v3.24.0
     hooks:
-    -   id: commitizen
-    -   id: commitizen-branch
+      - id: commitizen
+      - id: commitizen-branch
         stages:
-        - push
--   repo: https://github.com/psf/black
+          - push
+  - repo: https://github.com/psf/black
     rev: 24.4.0
     hooks:
-    -   id: black
+      - id: black
         language_version: python3
         stages:
-        - commit
--   repo: https://github.com/pre-commit/mirrors-pylint
+          - commit
+  - repo: https://github.com/pre-commit/mirrors-pylint
     rev: v3.0.0a5
     hooks:
-    -   id: pylint
+      - id: pylint
         name: pylint
         language: python
         entry: pylint
         types:
-        - python
+          - python
         stages:
-        - commit
--   repo: https://github.com/PyCQA/flake8
+          - commit
+  - repo: https://github.com/PyCQA/flake8
     rev: 7.0.0
     hooks:
-    -   id: flake8
--   repo: https://github.com/pre-commit/mirrors-mypy
+      - id: flake8
+  - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.9.0
     hooks:
-    -   id: mypy
-        args: ["--exclude", "**/__init__.py"]
+      - id: mypy
+        args:
+          ["--exclude", "**/__init__.py", "--explicit-package-bases", "src/"]
         additional_dependencies:
-        - types-all
--   repo: local
+          - types-all
+  - repo: local
     hooks:
-    -   id: requirements
+      - id: requirements
         name: requirements
         entry: bash -c ".venv/bin/pip3 freeze > requirements.txt; git add requirements.txt"
         language: system
         pass_filenames: false
         stages:
-        - commit
+          - commit
