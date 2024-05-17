@@ -2,10 +2,11 @@
 # pylint: disable=E0401
 import pytest
 
-# from src.models import Card
-# from src.models import Game
-from models.card import Card
-from models.game import Game
+from src.models import Card
+from src.models import Game
+
+# from models.card import Card
+# from models.game import Game
 
 
 @pytest.fixture

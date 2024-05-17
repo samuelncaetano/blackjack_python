@@ -1,5 +1,6 @@
-# from src.models import Deck
-from models.deck import Deck
+from src.models import Deck
+
+# from models.deck import Deck
 
 
 class Game:
