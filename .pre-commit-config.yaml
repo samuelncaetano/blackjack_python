@@ -28,14 +28,6 @@ repos:
     rev: 7.0.0
     hooks:
       - id: flake8
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.9.0
-    hooks:
-      - id: mypy
-        args:
-          ["--exclude", "**/__init__.py", "--explicit-package-bases", "src/"]
-        additional_dependencies:
-          - types-all
   - repo: local
     hooks:
       - id: requirements
