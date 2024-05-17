@@ -1,7 +1,9 @@
 # flake8: noqa: F401,
 # pylint: disable=E0401
 import pytest
-from src.models import Card
+
+# from src.models import Card
+from models.card import Card
 
 
 def test_ace_value():

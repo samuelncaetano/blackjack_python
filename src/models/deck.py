@@ -1,9 +1,9 @@
 # flake8: noqa: E501,
 import random
 from typing import List, Optional
-from src.models import Card
 
-# from models.card import Card
+# from src.models import Card
+from models.card import Card
 
 
 class Deck:
