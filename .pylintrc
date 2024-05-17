@@ -2,7 +2,11 @@
 
 disable=
       C0114, #Missing module docstring (missing-module-docstring)
+      C0115, #Missing class docstring (missing-class-docstring)
       C0116, #Missing function or method docstring (missing-function-docstring)
+      W0611, #Unused import (unused-import)
+      R0903, #Too few public methods (too-few-public-methods)
+      W0621, #Redefining outer name (redefined-outer-name)
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists
