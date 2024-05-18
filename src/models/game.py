@@ -1,6 +1,5 @@
-from typing import List
 from src.models import Deck
-from src.models import Card
+
 
 # from models.deck import Deck
 
@@ -30,10 +29,10 @@ class Game:
         else:
             print("Game is not over yet!")
 
-    def get_player_hand(self) -> List[Card]:
+    def get_player_hand(self):
         return self.player_hand
 
-    def get_dealer_hand(self) -> List[Card]:
+    def get_dealer_hand(self):
         return self.dealer_hand
 
     def get_player_score(self) -> int:
@@ -46,7 +45,7 @@ class Game:
         self.player_score = self.calculate_score(self.player_hand)
         self.dealer_score = self.calculate_score(self.dealer_hand)
 
-    def calculate_score(self, hand: List[Card]) -> int:
+    def calculate_score(self, hand) -> int:
         score = sum(card.get_value() for card in hand)
         ace_count = sum(1 for card in hand if card.face == "A")
         while score > 21 and ace_count > 0:

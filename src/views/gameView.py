@@ -1,9 +1,6 @@
 # flake8: noqa: E501,
-from src.models import Game
-
-
 class GameView:
-    def __init__(self, game: Game):
+    def __init__(self, game):
         self.game = game
 
     def display_game(self):
