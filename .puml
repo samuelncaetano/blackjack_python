@@ -1,0 +1,64 @@
+@startuml blackjack
+skinparam classAttributeIconSize 0
+
+class Card {
+  + face: str
+  + suit: str
+  + __init__(face: str, suit: str)
+  + get_value() : int
+}
+
+class Deck {
+  + cards: List[Card]
+  + __init__()
+  + initialize()
+  + shuffle()
+  + draw() : Optional[Card]
+}
+
+class Game {
+  + deck: Deck
+  + player_hand: List[Card]
+  + dealer_hand: List[Card]
+  + player_score: int
+  + dealer_score: int
+  + game_state: str
+  + __init__()
+  + start_new_game()
+  + restart_game()
+  + get_player_hand() : List[Card]
+  + get_dealer_hand() : List[Card]
+  + get_player_score() : int
+  + get_dealer_score() : int
+  + update_scores()
+  + calculate_score(hand: List[Card]) : int
+  + player_hit()
+  + dealer_play()
+  + get_game_state() : str
+}
+
+class GameView {
+  + game: Game
+  + __init__(game: Game)
+  + display_game()
+  + display_player_options()
+  + display_game_over()
+}
+
+class GameController {
+  + game: Game
+  + view: GameView
+  + __init__()
+  + start_game()
+  + process_player_turn()
+  + offer_restart_option()
+}
+
+Card "1" *-- "52" Deck
+Deck "1" --> "1" Game
+Game "1" --> "1" GameView
+GameController "1" --> "1" Game
+GameController "1" --> "1" GameView
+
+
+@enduml
