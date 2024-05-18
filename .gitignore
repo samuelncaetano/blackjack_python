@@ -4,3 +4,6 @@
 .pytest_cache
 **/__pycache__
 .coverage
+.cz.json
+.pre-commit-config.yaml
+.pylintrc
